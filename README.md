@@ -34,6 +34,13 @@ data_df.drop_duplicates("Mouse ID")
 # Checking the number of mice in the clean DataFrame.
 print(mice)
 
+summary_df
+print(summary_df)
+
+# Generate a bar plot showing the total number of mice for each treatment throughout the course of the study using pandas. 
+
+grouped_df = pd.DataFrame(merge_table.groupby(["drug Regimen"]).count()).
+
 # Generate a summary statistics table of mean, median, variance, standard deviation, and SEM of the tumor volume for each regimen
 mean = merge_table.groupby('Drug Regimen')['Tumor Volume (3mm)'].mean()
 median =  merge_table.groupby('Drug Regimen')['Tumor Volume (3mm)'].median()
