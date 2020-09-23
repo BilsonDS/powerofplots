@@ -33,3 +33,14 @@ data_df.drop_duplicates("Mouse ID")
 
 # Checking the number of mice in the clean DataFrame.
 print(mice)
+
+# Generate a summary statistics table of mean, median, variance, standard deviation, and SEM of the tumor volume for each regimen
+mean = merge_table.groupby('Drug Regimen')['Tumor Volume (3mm)'].mean()
+median =  merge_table.groupby('Drug Regimen')['Tumor Volume (3mm)'].median()
+variance = merge_table.groupby('Drug Regimen')['Tumor Volume (3mm)'].var()
+stdv = merge_table.groupby('Drug Regimen')['Tumor Volume (3mm)'].std()
+sem = merge_table.groupby('Drug Regimen')['Tumor Volume (3mm)'].sem()
+summary_df = pd.DataFrame({"Mean": mean, "Median": median, "variance":variance, "Standard Deviation": stvd, "SEM": sem})
+
+summary_df
+# This method is the most straighforward, creating multiple series and putting them all together at the end.
