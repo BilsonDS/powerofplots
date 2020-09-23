@@ -26,3 +26,6 @@ print(mice)
 # Getting the duplicate mice by ID number that shows up for Mouse ID and Timepoint
 duplicate=data_df.loc[data_df.duplicated(subset=["Mouse ID", "Timepoint"]),'Mouse ID'].unique()
 print(duplicate)
+
+# Create a clean DataFrame by dropping the duplicate mouse by its id
+data_df.drop_duplicates("Mouse ID")
