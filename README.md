@@ -29,3 +29,7 @@ print(duplicate)
 
 # Create a clean DataFrame by dropping the duplicate mouse by its id
 data_df.drop_duplicates("Mouse ID")
+
+
+# Checking the number of mice in the clean DataFrame.
+print(mice)
