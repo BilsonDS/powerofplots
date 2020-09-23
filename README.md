@@ -18,3 +18,11 @@ data_df = pd.merge(mouse_metadata, study_results, how = 'outer', on= 'Mouse ID')
 
 # Display the data table for preview
 data_df.head()
+
+# Checking the number of mice.
+mice=len(data_df["Mouse ID"].unique())
+print(mice)
+
+# Getting the duplicate mice by ID number that shows up for Mouse ID and Timepoint
+duplicate=data_df.loc[data_df.duplicated(subset=["Mouse ID", "Timepoint"]),'Mouse ID'].unique()
+print(duplicate)
